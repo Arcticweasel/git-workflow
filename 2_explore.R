@@ -17,6 +17,13 @@ ggsave("plot.png", p)
 
 
 # Top 10 countries in 1950 wrt total population
+df<- as_tibble(df)
+p1 <- df %>%
+    filter(year=="1950") %>%
+    group_by(country) %>%
+    summarise(population=sum(population))%>%
+    arrange(desc(population))
+class(df)
 
 # Top 10 countries in 2100 wrt total population
 
