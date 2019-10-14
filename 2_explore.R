@@ -33,5 +33,9 @@ p2 <- df %>%
     arrange(desc(population))
 
 # Top 10 countries with respect to the change in total population between 1950 and 2100
+p3 <- df%>%
+  filter(year %in% seq(from="1950", to="2100", by=5)) %>%
+  group_by(country) %>%
+  summarise(growth=)
 
 # etc.
